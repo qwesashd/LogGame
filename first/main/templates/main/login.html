@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Страница входа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ff69b4, #00bfff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      width: 300px;
+      height: 300px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-input {
+      margin-bottom: 10px;
+      width: 200px;
+      height: 30px;
+      border: none;
+      border-radius: 15px;
+      padding: 5px;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .register-link a {
+      color: #555;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .back-button,
+    .support-button,
+    .login-button {
+      display: inline-block;
+      padding: 8px 17px;
+      font-size: 15px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #d45a97;
+      color: #fff;
+      border-radius: 25px;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .back-button:hover,
+    .support-button:hover,
+    .login-button:hover {
+      background-color: #ff3381;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .support-button {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    @media (max-width: 576px) {
+      .login-container {
+        width: 90%;
+        max-width: 300px;
+      }
+
+      .form-input {
+        width: 100%;
+      }
+
+      .back-button,
+      .support-button,
+      .login-button {
+        font-size: 11px;
+        padding: 9px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-form" action="#" method="post">
+      <input class="form-input" type="text" name="username" placeholder="Логин">
+      <input class="form-input" type="password" name="password" placeholder="Пароль">
+      <button class="login-button">Войти</button>
+    </form>
+    <div class="register-link">
+      <a href="{% url 'reg' %}" class="register-link">Регистрация</a>
+    </div>
+  </div>
+
+  <a href="{% url 'home' %}" class="back-button">На главную</a>
+  <button class="support-button">Поддержка</button>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
